@@ -49,21 +49,45 @@ function levelUp() {
     gameFlash(randbtn);
 }
 
-function checkAns(idx) {
+// function checkAns(idx) {
 
-    if(userSeq[idx] === gameSeq[idx]) {
-        if(userSeq.length == gameSeq.length) {
+//     if(userSeq[idx] === gameSeq[idx]) {
+//         if(userSeq.length == gameSeq.length) {
+//             setTimeout(levelUp, 1000);
+//         }
+//     } else {
+//         h2.innerHTML = `Game Over! Your Score was <b>${level}</b> <br>Press any key to start.`;
+//         document.querySelector("body").style.backgroundColor = "red";
+//         setTimeout(function() {
+//             document.querySelector("body").style.backgroundColor = "white";
+//         }, 150);
+//         reset();
+//     }
+// }
+
+
+function checkAns(idx) {
+    if (userSeq[idx] === gameSeq[idx]) {
+        if (userSeq.length == gameSeq.length) {
             setTimeout(levelUp, 1000);
         }
     } else {
         h2.innerHTML = `Game Over! Your Score was <b>${level}</b> <br>Press any key to start.`;
-        document.querySelector("body").style.backgroundColor = "red";
-        setTimeout(function() {
-            document.querySelector("body").style.backgroundColor = "white";
+
+        // Remove dark-theme before flashing red
+        document.body.classList.remove("dark-theme"); 
+        document.body.classList.add("game-over");
+
+        setTimeout(() => {
+            document.body.classList.remove("game-over");
+            document.body.classList.add("dark-theme"); // ✅ Return to dark mode every time
         }, 150);
+
         reset();
     }
 }
+
+
 
 function btnPress() {
     // console.log(this);

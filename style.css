@@ -1,37 +1,90 @@
+/* General Styling */
 body {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #282c34; /* Ensuring default dark background */
+    color: white;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
 }
 
-.btn {
-    height: 200px;
-    width: 200px;
-    border-radius: 20%;
-    border: 10px solid black;
-    margin: 1.5rem;
+/* Headings */
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
 }
 
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Grid */
 .btn-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
+/* Button Row */
+.line-one, .line-two {
+    display: flex;
+    gap: 20px;
+}
+
+/* Button Styles */
+.btn {
+    height: 160px;
+    width: 160px;
+    border-radius: 20px;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Button Colors */
 .yellow {
-    background-color: #f99b45;
+    background: linear-gradient(to bottom, #f9b242, #d87b2b);
 }
 .red {
-    background-color: #d95980;
+    background: linear-gradient(to bottom, #e74c3c, #c0392b);
 }
 .purple {
-    background-color: #b19ff9;
+    background: linear-gradient(to bottom, #9b59b6, #8e44ad);
 }
 .green {
-    background-color: #63aac0;
+    background: linear-gradient(to bottom, #2ecc71, #27ae60);
 }
 
-
+/* Flashing Effect */
 .flash {
-    background-color: white;
+    background: white !important;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
 }
-.userflash { 
-    background-color: green;
+
+.userflash {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Game Over Effect (Flashes Red, then Returns to Dark) */
+body.game-over {
+    background-color: red !important;
+}
+
+body.dark-theme {
+    background-color: #282c34 !important;
 }
