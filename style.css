@@ -20,6 +20,25 @@ h2 {
     transition: 0.3s ease-in-out;
 }
 
+/* Start Button */
+#start-btn {
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#start-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
 /* Button Grid */
 .btn-container {
     display: flex;
